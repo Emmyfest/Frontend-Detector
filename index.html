@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animal Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Animal Tracker</h1>
+    <nav>
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#inventory">Inventory</a></li>
+        <li><a href="#health-records">Health Records</a></li>
+        <li><a href="#disease-detection">Disease Detection</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Dashboard -->
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <div id="stats">
+        <p>Total Animals: <span id="total-animals">0</span></p>
+        <p>Healthy: <span id="healthy-animals">0</span></p>
+        <p>Needs Attention: <span id="attention-animals">0</span></p>
+        <p>Vaccinations Due: <span id="vaccinations-due">0</span></p>
+      </div>
+    </section>
+
+    <!-- Animal Inventory -->
+    <section id="inventory">
+      <h2>Animal Inventory</h2>
+      <button id="load-animals">Load Animals</button>
+      <table id="animals-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Species</th>
+            <th>Breed</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Animal rows will be added here -->
+        </tbody>
+      </table>
+      <h3>Add New Animal</h3>
+      <form id="animal-form">
+        <input type="text" name="id" placeholder="Animal ID" required>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="species" placeholder="Species" required>
+        <input type="text" name="breed" placeholder="Breed">
+        <input type="number" name="age" placeholder="Age">
+        <select name="gender">
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <select name="healthStatus">
+          <option value="">Select Status</option>
+          <option value="Healthy">Healthy</option>
+          <option value="Sick">Sick</option>
+          <option value="Under Treatment">Under Treatment</option>
+          <option value="Quarantine">Quarantine</option>
+        </select>
+        <input type="text" name="notes" placeholder="Notes">
+        <button type="submit">Add Animal</button>
+      </form>
+    </section>
+
+    <!-- Health Records -->
+    <section id="health-records">
+      <h2>Health Records</h2>
+      <button id="load-records">Load Health Records</button>
+      <table id="records-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Animal ID</th>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Condition</th>
+            <th>Administered By</th>
+            <th>Next Follow-up</th>
+            <th>Notes</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Health record rows will be added here -->
+        </tbody>
+      </table>
+      <h3>Add New Health Record</h3>
+      <form id="record-form">
+        <input type="text" name="id" placeholder="Record ID" required>
+        <input type="text" name="animalId" placeholder="Animal ID" required>
+        <input type="date" name="date" required>
+        <select name="recordType" required>
+          <option value="">Select Record Type</option>
+          <option value="Routine Checkup">Routine Checkup</option>
+          <option value="Vaccination">Vaccination</option>
+          <option value="Treatment">Treatment</option>
+          <option value="Surgery">Surgery</option>
+          <option value="Diagnosis">Diagnosis</option>
+        </select>
+        <input type="text" name="condition" placeholder="Condition/Treatment">
+        <input type="text" name="administeredBy" placeholder="Administered By">
+        <input type="date" name="nextFollowUp">
+        <input type="text" name="notes" placeholder="Notes">
+        <button type="submit">Add Health Record</button>
+      </form>
+    </section>
+
+    <!-- Disease Detection -->
+    <section id="disease-detection">
+      <h2>Disease Detection</h2>
+      <form id="disease-form">
+        <label for="species-select">Animal Species:</label>
+        <select id="species-select" name="species">
+          <option value="">Select species</option>
+          <option value="Cattle">Cattle</option>
+          <option value="Sheep">Sheep</option>
+          <option value="Goat">Goat</option>
+          <option value="Poultry">Poultry</option>
+          <option value="Swine">Swine</option>
+          <option value="Horse">Horse</option>
+          <option value="Other">Other</option>
+        </select>
+        <br>
+        <label>Select Symptoms:</label>
+        <div>
+          <input type="checkbox" name="symptoms" value="Fever"> Fever
+          <input type="checkbox" name="symptoms" value="Lethargy"> Lethargy
+          <input type="checkbox" name="symptoms" value="Loss of Appetite"> Loss of Appetite
+          <input type="checkbox" name="symptoms" value="Dehydration"> Dehydration
+          <input type="checkbox" name="symptoms" value="Coughing"> Coughing
+          <input type="checkbox" name="symptoms" value="Difficulty Breathing"> Difficulty Breathing
+          <input type="checkbox" name="symptoms" value="Nasal Discharge"> Nasal Discharge
+          <input type="checkbox" name="symptoms" value="Diarrhea"> Diarrhea
+          <input type="checkbox" name="symptoms" value="Vomiting"> Vomiting
+          <input type="checkbox" name="symptoms" value="Lameness"> Lameness
+          <input type="checkbox" name="symptoms" value="Skin Lesions"> Skin Lesions
+          <input type="checkbox" name="symptoms" value="Weight Loss"> Weight Loss
+        </div>
+        <br>
+        <label for="duration">Duration of Symptoms:</label>
+        <select id="duration" name="duration">
+          <option value="">Select duration</option>
+          <option value="Less than 24 hours">Less than 24 hours</option>
+          <option value="2-3 days">2-3 days</option>
+          <option value="About a week">About a week</option>
+          <option value="More than a week">More than a week</option>
+        </select>
+        <br>
+        <textarea name="additionalNotes" placeholder="Additional Notes"></textarea>
+        <br>
+        <button type="submit">Analyze Symptoms</button>
+      </form>
+      <div id="analysis-results">
+        <!-- Analysis results will be displayed here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2023 Animal Tracker. All rights reserved.</p>
+    <nav>
+      <a href="#terms">Terms of Service</a> |
+      <a href="#privacy">Privacy Policy</a> |
+      <a href="#contact">Contact Us</a>
+    </nav>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
